@@ -1,0 +1,55 @@
+body {
+    background-color: goldenrod;
+}
+
+header {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex
+}
+
+
+.logo-header, .logo-usuario, .logo-carrito {
+    padding: 1rem
+    
+}
+
+.logo-usuario, .logo-carrito {align-self: flex-end;}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    max-width: 90%;
+    
+    }
+
+
+
+.seccion-principal {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+            }
+
+.articulos_seccion {
+    text-align: center;
+}
+
+.imagenes-main{
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.seccion-secundaria {
+    display: flex;
+    justify-content:space-between;
+    
+}
+
+.articulos_secundarios {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.secciones {margin: 50px 10px;}
