@@ -1,0 +1,142 @@
+.padding-1rem {
+    padding: 1rem;
+}
+
+.cart{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-items{
+    /*  margin-bottom: 150px; */
+}
+
+.cart-items-wrapper{
+    display: flex;
+    margin: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-items-wrapper .item-pic {
+    width: 25%;
+}
+
+.item-pic img {
+    max-width: 100%;
+}
+
+.cart .cart-items .cart-items-wrapper .item-details {
+    display: flex;
+    align-items: center;
+}
+
+.item-details .title-freight-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-title {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.item-details .title-freight-wrap .freight {
+    font-size: 14px;
+}
+
+.cart-items-wrapper .q-n-price {
+    display: flex;
+    flex-direction: row;
+    min-width: 25%;
+    align-items: center;
+}
+
+.item-details input,
+.q-n-price input{
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    border-radius: 100%;
+    border: 1px solid #73ACDF;
+}
+
+.price {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.cart .payment {
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 1rem;
+}
+.cart .payment {
+    text-align: center;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart .payment .address {
+    font-size: 14px;
+}
+
+.cart .payment .address :first-child{
+    font-weight: 500;
+}
+
+.cart .payment .pre-checkout {
+    display: flex;
+    flex-direction: column;
+}
+
+.pre-checkout .checkout-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.pay-button {
+    align-self: center;
+    background-color: #73ACDF;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    color: #FFFFFF;
+    width: 250px;
+    font-weight: bold;
+}
+
+.pay-button:hover {
+    background-color: #3486cf;
+}
+
+.continue-shopping h3 {
+    padding: 1rem 0 0 1rem;
+    color: #666;
+}
+
+.more-similars {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.more-similars .similar-card {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #3486cf;
+    box-shadow: 0px 0px 5px 0px #73ACDF;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.more-similars .similar-card .item-title{
+    text-align: center;
+    color: #666;
+}
+

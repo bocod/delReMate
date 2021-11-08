@@ -1,0 +1,53 @@
+/*  Definimos fuentes y colores a usar en todo el sitio:
+    celeste: #73ACDF
+    celeste: RGB (115,172,223)
+    blanco: #FFFFFF
+    blanco: RGB (255,255,255)
+    amarillo: #F6B50E
+    amarillo: RGB (246,181,14)
+
+    celeste alternativo: #00aae4
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Encode Sans', sans-serif;
+}
+
+.fc-darkgray {
+    color: #333;
+}
+
+.fc-dblue {
+    color: #73ACDF;
+}
+
+.fc-blue {
+    color: #3486cf;
+}
+
+.fc-yellow {
+    color:  #F6B50E;
+}
+
+.fc-white {
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+main {
+    width: 95vw;
+    margin: 0 auto;
+}
