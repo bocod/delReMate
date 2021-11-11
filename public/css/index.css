@@ -1,0 +1,99 @@
+h2 {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.upper-main {
+    margin: auto;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.upper-main .category-card{
+    width: 25%;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.img-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.upper-main .img-wrapper img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.upper-main h3 {
+    font-size: 16px;
+    text-align: center;
+}
+
+.lower-main {
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.lower-main .fileteado {
+    height: 3rem;
+}
+
+.lower-main .lm-header p {
+    text-align: center;
+}
+
+.lower-main .squared-cards-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.lower-main .squared-cards-container .sq-card-wrapper {
+    padding: 0.5rem;
+    width: 50%;
+
+}
+
+.lower-main .squared-cards-container .squared-card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    border: 1px solid #3486cf;
+    box-shadow: 0px 0px 5px 0px #73ACDF;
+}
+
+.lower-main .img-wrapper img {
+    width: 100%;
+}
+
+.squared-card .title-n-price-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.lower-main h3 {
+    font-size: 16px;
+    text-align: left;
+    padding: 5px;
+}
+
+.lower-main p {
+    text-align: left;
+    padding: 5px;
+}

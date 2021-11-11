@@ -7,10 +7,6 @@
     flex-direction: column;
 }
 
-.cart-items{
-    /*  margin-bottom: 150px; */
-}
-
 .cart-items-wrapper{
     display: flex;
     margin: 8px;

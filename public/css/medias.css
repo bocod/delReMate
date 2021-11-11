@@ -1,0 +1,33 @@
+/* 736px iPhone 8 Plus landscape position */
+
+/* 737px Phablet / Table portrait position */
+
+@media (min-width: 737px){
+    .upper-main {
+        flex-wrap: nowrap;
+    }
+    .lower-main .squared-cards-container .sq-card-wrapper {
+        width: 25%;
+    }
+}
+
+@media (min-width: 900px){
+    .searchbar {
+        position: absolute;
+        top: 1rem;
+        left: 25%;
+        width: 500px;
+    }
+}
+
+@media (min-width: 1200px){
+    header,
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .searchbar {
+        left: 30%;
+    }
+}
