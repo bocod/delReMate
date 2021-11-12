@@ -1,0 +1,114 @@
+* {
+    box-sizing: border-box;
+}
+
+main {
+    margin: auto;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.form-data-section {
+    margin: 1rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.form-data-section label {
+    display: block;
+    padding: 4px;
+}
+
+.form-data-section :first-child {
+    font-weight: bold;
+    padding-bottom: 1rem;
+}
+
+.usertype {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.usertype label{
+    font-weight: 400 !important;
+}
+
+.input-field {
+    border: solid 1px #73ACDF;
+    border-radius: 25px;
+    height: 1.5rem;
+    font-size: 12px;
+    padding: 1rem;
+    width: 100%;
+
+}
+
+.cat-option {
+    font-size: 14px;
+}
+
+.form-button {
+    border-radius: 25px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.gray-button {
+    color: #666;
+    border-color: #666;
+    background-color: #ebebeb;
+    font-weight: bold;
+    width: 50%;
+    max-width: 250px;
+}
+
+.blue-button {
+    border: none;
+    background-color: #0b72bb;
+    color: #fff;
+    font-weight: bold;
+    width: 50%;
+    max-width: 250px;
+}
+
+.emphasize-button:hover {
+    background-color: #129ce5;
+}
+
+.country-selector {
+    border: solid 1px #73ACDF;
+    border-radius: 25px;
+    font-size: 12px;
+    padding: 0.5rem;
+    width: 100%;
+    color: #666;
+    font-weight: bold;
+}
+
+.tycPp {
+    font-size: 12px;
+    color: #666;
+    padding: 10px;
+}
+
+.form-data-section .tyc a{
+    color: #666;
+    text-decoration: underline;
+}
+
+.form-data-section .tyc a:visited{
+    color: #666 !important;
+    text-decoration: underline !important;
+}
