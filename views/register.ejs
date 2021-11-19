@@ -18,22 +18,7 @@
     <script type="text/javascript" src="/script/register.js"></script>
 </head>
 <body>
-    <header>
-        <!-- Espacio para el header -->
-        <section class="upper-header padding-1rem">
-            <h1><a href="/"><img src="/images/mate-logo.jpeg" alt="delReMate logo"></a></h1>
-            <section class="upper-header-right">
-                <a href="/"><i class="icon far fa-user"></i></a>
-                <a href="/productCart"><i class="icon fas fa-shopping-cart"></i></a>
-            </section>
-        </section>
-        <section class="lower-header fc-dblue">
-            <form action="" class="searchbar">
-                <input type="text" placeholder="Buscá por nombre, marca, categoría,...">
-                <button class="icon fas fa-search"></button>
-            </form>
-        </section>
-    </header>
+    <%- include('./partials/header') %> 
 
     <main>
         <section class="container">
