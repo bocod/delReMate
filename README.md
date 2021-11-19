@@ -16,9 +16,11 @@ Así también será bienvenido todo aquel usuario que, sin importar su nacionali
 ¿Cómo ajustaremos nuestra oferta a ese público?
 Ofrecimiento de productos acordes a los intereses de este público objetivo, generación de convenios con servicios de mensajería y cuorier internacionales para estandarizar y agilizar los trámites de logística y aduana, y herramientas de segmentación publicitaria en las plataformas de internet GoogleAds y Facebook (entre otras).
 
-Integrantes - en orden alfabético:
+Integrante:
 
 ~ Agustin Boccio: Me encanta aprender, viajar, correr y comer. Disfruto de la familia y los amigos, el mate, los  asados. En el camino que estoy recorriendo me doy cuenta que nunca es tarde, solo hay que animarse.
+
+Hasta el primer sprint del proyecto (wireframes) colaboraron:
 
 ~ José Di Loreto: Mi nombre es José Diloreto, soy argentino, tengo 25 años. Soy muy curioso y me encanta aprender cosas nuevas. Trabajé siempre en atención al público y mis hobbys son los deportes.
 
