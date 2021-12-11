@@ -39,6 +39,15 @@
         left: 25%;
         width: 500px;
     }
+    .upper-main .category-card:hover {
+        text-shadow: 2px 2px 2px #73ACDF;
+    }
+    .lower-main .squared-cards-container .sq-card-wrapper .squared-card{
+        box-shadow: 0px 0px 0px 0px #73ACDF;
+    }
+    .lower-main .squared-cards-container .sq-card-wrapper .squared-card:hover{
+        box-shadow: 0px 0px 5px 3px #73ACDF;
+    }
 }
 
 @media (min-width: 1200px){
