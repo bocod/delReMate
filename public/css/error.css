@@ -1,0 +1,27 @@
+main {
+    margin: auto;
+    text-align: center;
+}
+
+.container {
+    padding: 1rem;
+}
+
+h2 {
+    padding: 1rem;
+}
+
+p {
+    padding: 1rem;
+}
+
+p a:visited,
+p a {
+    text-decoration: underline;
+    color: #333;
+}
+
+p a:hover {
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+}

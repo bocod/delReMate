@@ -51,3 +51,8 @@ main {
     width: 95vw;
     margin: 0 auto;
 }
+
+.padding-1rem {
+    padding: 1rem;
+}
+

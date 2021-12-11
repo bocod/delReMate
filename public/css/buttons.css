@@ -1,0 +1,27 @@
+.form-button {
+    border-radius: 25px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.gray-button {
+    color: #666;
+    border-color: #666;
+    background-color: #ebebeb;
+    font-weight: bold;
+    width: 50%;
+    max-width: 250px;
+}
+
+.blue-button {
+    border: none;
+    background-color: #0b72bb;
+    color: #fff;
+    font-weight: bold;
+    width: 50%;
+    max-width: 250px;
+}
+
+.emphasize-button:hover {
+    background-color: #129ce5;
+}

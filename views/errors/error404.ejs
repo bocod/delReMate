@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/theme.css">
     <link rel="stylesheet" href="/css/header-n-footer.css">
-    <link rel="stylesheet" href="/css/form.css">
-    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/error.css">
     <link rel="stylesheet" href="/css/medias.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,27 +16,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <%- include('./partials/header') %> 
+    <%- include('../partials/header') %> 
 
     <main>
+        <section class="error-img">
+            <a href="/"><img src="/images/mendieta-error.png" alt="Que lo parió! Es un error"></a>
+        </section>
         <section class="container">
-            <form class="registration-form" action="/" method="get">
+            <h2>¡Ahijuna! M'ijo!</h2>
 
-                <div class="form-data-section">
-                    <input type="text" name="username" id="username" class="input-field" placeholder="Nombre de usuario" required>
-                </div>
+            <p>Me ha cebado un mate frío... o bien la página que estás buscando no existe...</p>
 
-                <div class="form-data-section">
-                    
-                    <input type="password" name="password" class="input-field" placeholder="Contraseña" required>
-                </div>
+            <p>¡No se preocupe! <a href="/">Sigiuiendo esta ruta puede volver al inicio...</a></p>
 
-                <button class="form-button blue-button emphasize-button">Ingresar</button>
-    
-            </form>
         </section>
     </main>
 
-    <%- include('./partials/footer') %> 
+    <%- include('../partials/footer') %> 
 </body>
 </html>

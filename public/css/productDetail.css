@@ -1,0 +1,56 @@
+.productDetail-wrapper {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.first-uc {
+
+}
+
+.first-uc img {
+    width: 100%;
+}
+
+.second-uc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.second-uc .price {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.second-uc .stock {
+
+}
+
+.second-uc .freight {
+    
+}
+
+.second-uc .button-section{
+    text-align: center;
+}
+.second-uc  .button-section button {
+    min-width: 250px;
+}
+
+.second-uc .seller-data {
+    align-self: flex-start;
+}
+
+.lower-container {
+    margin-bottom: 1rem;
+}
+
+.lower-container .description {
+    text-align: justify;
+}

@@ -9,6 +9,27 @@
     .lower-main .squared-cards-container .sq-card-wrapper {
         width: 25%;
     }
+    .productDetail-wrapper{
+    }
+    .productDetail-wrapper .upper-container {
+        flex-direction: row;
+    }
+    .productDetail-wrapper .upper-container .first-uc {
+        width: 70%;
+    }
+    .productDetail-wrapper .upper-container .second-uc {
+        padding-top: 1rem;
+        width: 30%;
+        position: fixed;
+        top: 100px;
+        left: 65%;
+    }
+    .second-uc .button-section button {
+        min-width: 275px;
+    }
+    .lower-container .description {
+        width: 65%;
+    }
 }
 
 @media (min-width: 980px){

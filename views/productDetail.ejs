@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DelReMate - Producto</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/header-n-footer.css">
+    <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/medias.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('./partials/header') %> 
+
+    <main>
+        <div class="productDetail-wrapper">
+            <section class="upper-container">
+                <div class="first-uc">
+                    <h2>PRODUCT TITLE</h2>
+                    <img src="/images/billetera.jpg" alt="billetera">
+                </div>
+                <div class="second-uc">
+                    <p class="price padding-1rem">$99.99</p>
+                    <p class="stock">20 unidades</p>
+                    <p class="freight fc-yellow"><i class="fas fa-shipping-fast"></i> Envío internacional</p>
+                    <div class="button-section padding-1rem">
+                        <button class="form-button blue-button emphasize-button">COMPRAR</button>
+                        <button class="form-button gray-button">Agregar al carrito</button>
+                    </div>
+                    <article class="seller-data padding-1rem">
+                        <p>Nombre</p>
+                        <p>Reputación</p>
+                        <p>Cantidad de ventas</p>
+                    </article>
+                </div>
+            </section>
+            <section class="lower-container padding-1rem">
+                <article class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Molestias nemo asperiores dolorem repellendus excepturi, 
+                    laborum quis ab est facere. Hic debitis numquam explicabo 
+                    voluptate temporibus rem perferendis optio voluptas asperiores?
+                </article>
+            </section>
+        </div>    
+    </main>
+
+    <%- include('./partials/footer') %> 
+</body>
+</html>

@@ -67,15 +67,17 @@
             <div class="squared-cards-container">
             
                 <div class="sq-card-wrapper">
-                    <article class="squared-card">
-                        <div class="img-wrapper">
-                            <img src="/images/billetera.jpg" alt="billetera">
-                        </div>
-                        <div class="title-n-price-container">
-                            <h3 class="product-title  fc-darkgray">Billetera de cuero</h3>
-                            <p class="price">$9.49</p>
-                        </div>
-                    </article>
+                    <a href="/productDetail">
+                        <article class="squared-card">
+                            <div class="img-wrapper">
+                                <img src="/images/billetera.jpg" alt="billetera">
+                            </div>
+                            <div class="title-n-price-container">
+                                <h3 class="product-title  fc-darkgray">Billetera de cuero</h3>
+                                <p class="price">$9.49</p>
+                            </div>
+                        </article>
+                    </a>
                 </div>
                 
                 <div class="sq-card-wrapper">
@@ -117,59 +119,6 @@
         </section>
     </main>
 
-    <footer>
-        <!-- Espacion para el upper footer SEO -->
-
-        <section class="upper-footer padding-1rem">
-            
-            <article class="footer-card fc-white">
-                <div>
-                    <h3 class="footer-title">Alimentos</h3>
-                    <a href=""><p>Fernet</p></a>
-                    <a href="#"><p>Yerba</p></a>
-                    <a href="#"><p>Dulce de leche</p></a>
-                    <a href="#"><p>Vino</p></a>
-                </div>
-            </article>
-
-            <article class="footer-card fc-white">
-                <div>
-                    <h3 class="footer-title">Ropa</h3>
-                    <a href="#"><p>Ponchos</p></a>
-                    <a href="#"><p>Cintos</p></a>
-                    <a href="#"><p>Alpargatas</p></a>
-                    <a href="#"><p>Pantalones</p></a>
-                </div>
-            </article>
-
-            <article class="footer-card fc-white">
-                <div>
-                    <h3 class="footer-title">Regionales</h3>
-                    <a href="#"><p>Mates</p></a>
-                    <a href="#"><p>Bombillas</p></a>
-                    <a href="#"><p>Alfajores</p></a>
-                    <a href="#"><p>Alfeñiques</p></a>
-                </div>
-            </article>
-            
-        </section>
-
-        <!-- Footer media -->
-
-        <section class="footer-social fc-yellow padding-1rem">
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-facebook-square"></i>
-            <i class="fas fa-sun"></i>
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-twitter-square"></i>
-        </section>
-
-        <!-- Lower footer con  copy  -->
-
-        <section class="lower-footer">
-            <p> &copy;delReMate.com | 2021 | Todos los derechos reservados </p>
-        </section>
-
-    </footer>
+    <%- include('./partials/footer') %> 
 </body>
 </html>

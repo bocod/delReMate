@@ -1,7 +1,3 @@
-.padding-1rem {
-    padding: 1rem;
-}
-
 .cart{
     display: flex;
     flex-direction: column;
