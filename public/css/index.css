@@ -62,10 +62,17 @@ h2 {
 .lower-main .squared-cards-container .sq-card-wrapper {
     padding: 0.5rem;
     width: 50%;
-
 }
 
-.lower-main .squared-cards-container .squared-card{
+.lower-main .squared-cards-container .sq-card-wrapper a{
+    text-decoration: none;
+}
+
+.lower-main .squared-cards-container .sq-card-wrapper a:hover{
+    text-decoration: none;
+}
+
+.lower-main .squared-cards-container .sq-card-wrapper .squared-card{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
