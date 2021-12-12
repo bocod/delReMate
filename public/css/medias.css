@@ -40,7 +40,8 @@
         width: 500px;
     }
     .upper-main .category-card:hover {
-        text-shadow: 2px 2px 2px #73ACDF;
+        text-shadow: 0px 0px 0.5px #666;
+        color: #000;
     }
     .lower-main .squared-cards-container .sq-card-wrapper .squared-card{
         box-shadow: 0px 0px 0px 0px #73ACDF;
