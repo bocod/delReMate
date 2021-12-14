@@ -1,15 +1,25 @@
+const fs = require('fs');
+const path = require('path');
+
+const productDataPath = path.join(__dirname, '../database/productData.json');
+const productDataText = fs.readFileSync(productDataPath, 'utf-8');
+const products = JSON.parse(productDataText);
+
+/*
 const products = [
     {
         id: 1,
+        category: 'Ropa',
         title: 'Alpargatas',
         freight: undefined,
         price: 8.99,
         size: 'Del 29 al 45',
         description: 'Las clásicas alpargatas argentinas de tela, con refuerzo en capellada y talón, apellada de algodón y suela de goma sintética.',
-        img: "/images/alpargatas.jpg",
+        img: "../images/alpargatas.jpg",
     },
     {
         id: 2,
+        category: 'Alimentos',
         title: 'Dulce de leche',
         freight: undefined,
         size: '450grs',
@@ -19,6 +29,7 @@ const products = [
     },
     {
         id: 3,
+        category: 'Bebidas',
         title: 'Fernet',
         freight: undefined,
         size: '750 ml.',
@@ -28,6 +39,7 @@ const products = [
     },
     {
         id: 4,
+        category: 'Yerba',
         title: 'Yerba',
         freight: undefined,
         size: '1 kg.',
@@ -37,6 +49,7 @@ const products = [
     },
     {
         id: 5,
+        category: 'Bebidas',
         title: 'Vino',
         freight: undefined,
         size: '750 ml',
@@ -46,6 +59,7 @@ const products = [
     },
     {
         id: 6,
+        category: 'Regionales',
         title: 'Mate con bombilla',
         freight: undefined,
         size: 'Imperial',
@@ -54,10 +68,21 @@ const products = [
         img: "/images/mate-bombilla.jpg",
     }
 ];
+*/
 
 module.exports = {
     home: (req, res) => {
-        res.render('index')
+        const indexProducts = [];
+        indexProducts.push(products.find(product => product.title === 'Billetera'));
+        indexProducts.push(products.find(product => product.title === 'Facón'));
+        indexProducts.push(products.find(product => product.title === 'Boina'));
+        indexProducts.push(products.find(product => product.title === 'Pantalón'));
+
+        console.log(indexProducts[0]);
+        console.log(indexProducts[1]);
+        console.log(indexProducts[2]);
+        console.log(indexProducts[3]);
+        res.render('index', { indexProducts: indexProducts})
     },
     login: (req, res) => {
         res.render('login')
@@ -65,14 +90,14 @@ module.exports = {
     productCart: (req, res) => {
         res.render('productCart')
     },
+/*
     productDetail: (req, res) => {
         res.render('productDetail')
     },
-    /*
+*/    
     productDetail: (req, res) => {
-        const id = req.params.id;
-        const product = products.find( (product)=>{
-            return id == product.id;
+        const productSelected = products.filter( (product)=>{
+            return product.id == req.params.id;
         });
         if (product){
             res.render('productDetail', {
@@ -81,7 +106,15 @@ module.exports = {
         } else {
             res.render('./errors/error404')
         };
-    },*/
+    },
+
+    productList: (req, res) => {
+        const productCategory = products.filter( product => 
+            product.category == req.params.categorySelected);
+
+        res.render('productList', {productCategory: productCategory});
+    },
+
     register:(req, res) => {
         res.render('register')
     }

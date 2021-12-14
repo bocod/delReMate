@@ -23,7 +23,7 @@
     <main>
         <section class="upper-main">
                 <article class="category-card">
-                    <a href="#">
+                    <a href="/Alimentos">
                         <div class="img-wrapper">
                             <img src="/images/alfajor.png" alt="alfajor">
                         </div>
@@ -31,7 +31,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="#">
+                    <a href="/Bebidas">
                         <div class="img-wrapper">
                             <img src="/images/vinos.jpg" alt="bebidas">
                         </div>
@@ -39,7 +39,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="#">
+                    <a href="/Regionales">
                         <div class="img-wrapper">
                             <img src="/images/mateIcon.jpeg" alt="alfajor">
                         </div>
@@ -47,7 +47,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="#">
+                    <a href="/Ropa">
                         <div class="img-wrapper">
                             <img src="/images/poncho.jpg" alt="poncho">
                         </div>
@@ -55,7 +55,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="#">
+                    <a href="/Yerba">
                         <div class="img-wrapper">
                             <img src="/images/yerbaGranel.jpeg" alt="Yerba">
                         </div>
@@ -63,7 +63,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="#">
+                    <a href="/Oferta">
                         <div class="img-wrapper">
                             <img src="/images/oferta.jpg" alt="alfajor">
                         </div>
@@ -79,21 +79,20 @@
             </div>
 
             <div class="squared-cards-container">
-            
+
                 <div class="sq-card-wrapper">
                     <a href="/productDetail">
                         <article class="squared-card">
                             <div class="img-wrapper">
-                                <img src="/images/billetera.jpg" alt="billetera">
+                                <img src="/images/billetera.jpg" alt="facón gaucho">
                             </div>
                             <div class="title-n-price-container fc-darkgray">
-                                <h3 class="product-title">Billetera de cuero</h3>
-                                <p class="price">$9.49</p>
+                                <h3  class="product-title ">Billetera</h3>
+                                <p class="price">$10.99</p>
                             </div>
                         </article>
                     </a>
                 </div>
-                
                 <div class="sq-card-wrapper">
                     <a href="/productDetail">
                         <article class="squared-card">
@@ -135,6 +134,22 @@
                         </article>
                     </a>
                 </div>
+
+                <% for (let i=0; i < 4; i++) { %> 
+                    <div class="sq-card-wrapper">
+                        <a href="/productDetail/<%= indexProducts[i].id %>">
+                            <article class="squared-card">
+                                <div class="img-wrapper">
+                                    <img src="/images/dummie.jpg" alt="dummie image for testing">
+                                </div>
+                                <div class="title-n-price-container fc-darkgray">
+                                    <h3 class="product-title"><%= indexProducts[i].title %></h3>
+                                    <p class="price"><%= indexProducts[i].price %></p>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
+                    <% }; %> 
             </div>
         </section>
     </main>
