@@ -78,15 +78,22 @@ module.exports = {
         indexProducts.push(products.find(product => product.title === 'Boina'));
         indexProducts.push(products.find(product => product.title === 'Pantalón'));
 
-        console.log(indexProducts[0]);
-        console.log(indexProducts[1]);
-        console.log(indexProducts[2]);
-        console.log(indexProducts[3]);
         res.render('index', { indexProducts: indexProducts})
     },
+    
     login: (req, res) => {
         res.render('login')
     },
+
+    loginConfirmation: (req, res) => {
+        let user = {
+            username: req.body.username,
+            password: req.body.password
+        }
+
+        res.redirect('/');
+    },
+
     productCart: (req, res) => {
         res.render('productCart')
     },
@@ -115,7 +122,23 @@ module.exports = {
         res.render('productList', {productCategory: productCategory});
     },
 
-    register:(req, res) => {
+    registrationForm:(req, res) => {
         res.render('register')
+    },
+
+    createUser: (req, res) => {
+        
+        let user = {
+            usertype: req.body.usertype,
+            name: req.body.name,
+            surname: req.body.surname,
+            username: req.body.username,
+            birthdate: req.body.birthdate,
+            email: req.body.email,
+            country: req.body.country,
+            profilePic: req.body.profilePic,
+            password: req.body.password
+        }
+        res.redirect('/');
     }
 };

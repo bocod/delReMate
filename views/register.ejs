@@ -23,36 +23,36 @@
 
     <main>
         <section class="container">
-            <form class="registration-form" action="/" method="get">
+            <form class="registration-form" action="/register" method="POST">
 
                 <div class="form-data-section">
                 <label>Soy...</label> 
                     <div class="usertype">
-                        <label class="cat-option"><input type="radio" value="human" name="user-type" id="human"> Humano</label>
-                        <label class="cat-option"><input type="radio" value="business" name="user-type" id="business"> Empresa</label>
+                        <label class="cat-option"><input type="radio" value="human" name="usertype" id="human"> Humano</label>
+                        <label class="cat-option"><input type="radio" value="business" name="usertype" id="business"> Empresa</label>
                     </div>
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" required>
+                    <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" >
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="surname" id="surname" class="input-field" placeholder="Apellido" required>
+                    <input type="text" name="surname" id="surname" class="input-field" placeholder="Apellido" >
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="username" id="username" class="input-field" placeholder="Nombre de usuario" required>
+                    <input type="text" name="username" id="username" class="input-field" placeholder="Nombre de usuario" >
                 </div>
 
                 <div class="form-data-section">
                     <label for="birthdate">Fecha de nacimiento</label> 
-                    <input type="date" name="birthdate" id="birthdate" class="input-field" required>
+                    <input type="date" name="birthdate" id="birthdate" class="input-field" >
                 </div>
 
                 <div class="form-data-section">
                     
-                    <input type="text" name="email" id="address" class="input-field" placeholder="e-mail" required>
+                    <input type="text" name="email" id="address" class="input-field" placeholder="e-mail" >
                 </div>
                 
                 <div class="form-data-section">
@@ -300,11 +300,11 @@
                 </div>
                 <div class="form-data-section">
                     
-                    <input type="password" name="password" class="input-field" placeholder="Contraseña" required>
+                    <input type="password" name="password" class="input-field" placeholder="Contraseña" >
                 </div>
                 <div class="form-data-section">
                     
-                    <input type="password" name="password-confirmation" class="input-field" placeholder="Repetir contraseña" required>
+                    <input type="password" name="password-confirmation" class="input-field" placeholder="Repetir contraseña" >
                 </div>
                 
                 <div class="tycPp">
@@ -313,7 +313,7 @@
                         onclick="window.open('#','popup','width=600,height=600'); return false;">Políticas de Privacidad</a></label>
                 </div>
 
-                <button class="form-button blue-button emphasize-button">¡Registrarme!</button>
+                <button type="submit" class="form-button blue-button emphasize-button">¡Registrarme!</button>
     
             </form>
         </section>
