@@ -22,6 +22,19 @@
     max-width: 250px;
 }
 
+.red-button {
+    border: none;
+    background-color: #ee4124;
+    color: #fff;
+    font-weight: bold;
+    width: 50%;
+    max-width: 250px;
+}
+
 .emphasize-button:hover {
     background-color: #129ce5;
+}
+
+.emphasize-red-button:hover {
+    background-color: #d74f3d;
 }

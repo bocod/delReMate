@@ -23,7 +23,7 @@
     <main>
         <section class="upper-main">
                 <article class="category-card">
-                    <a href="/Alimentos">
+                    <a href="/products/Alimentos">
                         <div class="img-wrapper">
                             <img src="/images/alfajor.png" alt="alfajor">
                         </div>
@@ -31,7 +31,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="/Bebidas">
+                    <a href="/products/Bebidas">
                         <div class="img-wrapper">
                             <img src="/images/vinos.jpg" alt="bebidas">
                         </div>
@@ -39,7 +39,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="/Regionales">
+                    <a href="/products/Regionales">
                         <div class="img-wrapper">
                             <img src="/images/mateIcon.jpeg" alt="alfajor">
                         </div>
@@ -47,7 +47,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="/Ropa">
+                    <a href="/products/Ropa">
                         <div class="img-wrapper">
                             <img src="/images/poncho.jpg" alt="poncho">
                         </div>
@@ -55,7 +55,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="/Yerba">
+                    <a href="/products/Yerba">
                         <div class="img-wrapper">
                             <img src="/images/yerbaGranel.jpeg" alt="Yerba">
                         </div>
@@ -63,7 +63,7 @@
                     </a>
                 </article>
                 <article class="category-card">
-                    <a href="/Oferta">
+                    <a href="/products/Oferta">
                         <div class="img-wrapper">
                             <img src="/images/oferta.jpg" alt="alfajor">
                         </div>
@@ -79,68 +79,13 @@
             </div>
 
             <div class="squared-cards-container">
-
-                <div class="sq-card-wrapper">
-                    <a href="/productDetail">
-                        <article class="squared-card">
-                            <div class="img-wrapper">
-                                <img src="/images/billetera.jpg" alt="facón gaucho">
-                            </div>
-                            <div class="title-n-price-container fc-darkgray">
-                                <h3  class="product-title ">Billetera</h3>
-                                <p class="price">$10.99</p>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-                <div class="sq-card-wrapper">
-                    <a href="/productDetail">
-                        <article class="squared-card">
-                            <div class="img-wrapper">
-                                <img src="/images/facon.jpg" alt="facón gaucho">
-                            </div>
-                            <div class="title-n-price-container fc-darkgray">
-                                <h3  class="product-title ">Facón Gaucho</h3>
-                                <p class="price">$39.89</p>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-                
-                <div class="sq-card-wrapper">
-                    <a href="/productDetail">
-                        <article class="squared-card">
-                            <div class="img-wrapper">
-                                <img src="/images/boina.jpg" alt="boina">
-                            </div>
-                            <div class="title-n-price-container fc-darkgray">
-                                <h3  class="product-title">Boina gaucha</h3>
-                                <p class="price">$6.99</p>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-                
-                <div class="sq-card-wrapper">
-                    <a href="/productDetail">                
-                        <article class="squared-card">
-                            <div class="img-wrapper">
-                                <img src="/images/bombacho.jpg" alt="pantalón bombacho">
-                            </div>
-                            <div class="title-n-price-container fc-darkgray">
-                                <h3  class="product-title">Pantalón bombacha</h3>
-                                <p class="price">$25.00</p>
-                            </div>
-                        </article>
-                    </a>
-                </div>
-
-                <% for (let i=0; i < 4; i++) { %> 
+            
+                <% for (let i=0; i < 8; i++) { %> 
                     <div class="sq-card-wrapper">
-                        <a href="/productDetail/<%= indexProducts[i].id %>">
+                        <a href="/products/productDetail/<%= indexProducts[i].id %>">
                             <article class="squared-card">
                                 <div class="img-wrapper">
-                                    <img src="/images/dummie.jpg" alt="dummie image for testing">
+                                    <img src="<%= indexProducts[i].img %>" alt="dummie image for testing">
                                 </div>
                                 <div class="title-n-price-container fc-darkgray">
                                     <h3 class="product-title"><%= indexProducts[i].title %></h3>
@@ -149,7 +94,7 @@
                             </article>
                         </a>
                     </div>
-                    <% }; %> 
+                <% }; %> 
             </div>
         </section>
     </main>

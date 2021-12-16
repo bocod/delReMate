@@ -51,7 +51,6 @@
                 </div>
 
                 <div class="form-data-section">
-                    
                     <input type="text" name="email" id="address" class="input-field" placeholder="e-mail" >
                 </div>
                 
@@ -294,23 +293,27 @@
                         <option value="ZW">Zimbabue</option>
                     </select>
                 </div>
+
                 <div class="form-data-section">
                     <label for="pic">Foto de usuario</label> 
                     <input type="file" name="profilePic" accept="image/*">
                 </div>
+
                 <div class="form-data-section">
-                    
                     <input type="password" name="password" class="input-field" placeholder="Contraseña" >
                 </div>
+
                 <div class="form-data-section">
-                    
                     <input type="password" name="password-confirmation" class="input-field" placeholder="Repetir contraseña" >
                 </div>
                 
                 <div class="tycPp">
-                    <label><input type="checkbox" class="tyc"> Acepto los <a href="#" target="popup" 
-                        onclick="window.open('#','popup','width=600,height=600'); return false;">Terminos y Condiciones</a> y las <a href="#" target="popup" 
-                        onclick="window.open('#','popup','width=600,height=600'); return false;">Políticas de Privacidad</a></label>
+                    <label>
+                        <input type="checkbox" class="tyc"> Acepto los 
+                        <a href="#" target="popup" onclick="window.open('/tyc','popup','width=600,height=600'); return false;">Terminos y Condiciones</a>
+                         y las 
+                        <a href="#" target="popup" onclick="window.open('/pp','popup','width=600,height=600'); return false;">Políticas de Privacidad</a>
+                    </label>
                 </div>
 
                 <button type="submit" class="form-button blue-button emphasize-button">¡Registrarme!</button>

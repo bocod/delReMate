@@ -23,30 +23,32 @@
         <div class="productDetail-wrapper">
             <section class="upper-container">
                 <div class="first-uc">
-                    <h2>PRODUCT TITLE</h2>
-                    <img src="/images/billetera.jpg" alt="billetera">
+                    <h2 class="padding-1rem"><%= productSelected.title %></h2>
+                    <img src="<%= productSelected.img %>" alt="billetera">
                 </div>
                 <div class="second-uc">
-                    <p class="price padding-1rem">$99.99</p>
-                    <p class="stock">20 unidades</p>
-                    <p class="freight fc-yellow"><i class="fas fa-shipping-fast"></i> Envío internacional</p>
+                    <p class="price padding-1rem">€ <%= productSelected.price %></p>
+                    <p class="stock">Stock: <%= productSelected.stock %></p>
+                    <% if (productSelected.ship == true) { %>
+                        <p class="freight fc-yellow"><i class="fas fa-shipping-fast"></i> Envío internacional</p>
+                    <% } %>
                     <div class="button-section padding-1rem">
                         <button class="form-button blue-button emphasize-button">COMPRAR</button>
                         <button class="form-button gray-button">Agregar al carrito</button>
                     </div>
                     <article class="seller-data padding-1rem">
-                        <p>Nombre</p>
+                        <p>Vendedor: <%= productSelected.sellerid %></p>
                         <p>Reputación</p>
                         <p>Cantidad de ventas</p>
                     </article>
                 </div>
             </section>
             <section class="lower-container padding-1rem">
+                <div class="size">
+                    Medidas: <%= productSelected.size %>
+                </div>
                 <article class="description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Molestias nemo asperiores dolorem repellendus excepturi, 
-                    laborum quis ab est facere. Hic debitis numquam explicabo 
-                    voluptate temporibus rem perferendis optio voluptas asperiores?
+                    <%= productSelected.description %>
                 </article>
             </section>
         </div>    

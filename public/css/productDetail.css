@@ -9,12 +9,10 @@
     flex-direction: column;
 }
 
-.first-uc {
-
-}
-
 .first-uc img {
     width: 100%;
+    max-width: 400px;
+    padding: 1rem;
 }
 
 .second-uc {
@@ -29,11 +27,7 @@
 }
 
 .second-uc .stock {
-
-}
-
-.second-uc .freight {
-    
+    padding-bottom: 1rem;
 }
 
 .second-uc .button-section{
@@ -49,6 +43,10 @@
 
 .lower-container {
     margin-bottom: 1rem;
+}
+
+.lower-container .size {
+    padding-bottom: 1rem;
 }
 
 .lower-container .description {
