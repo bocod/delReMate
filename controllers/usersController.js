@@ -30,7 +30,17 @@ module.exports = {
                 country: req.body.country,
                 profilePic: req.body.profilePic,
                 password: req.body.password
-            }
+            };
+            
+            // add user to array of users... usersList.push(user)???
+            
+            // let user = req.body ;
+            console.log(user);
+            usersList.create(user);
+            console.log(usersList);
+
+            // saveChangesUser();
+
             res.redirect('/');
         },
     

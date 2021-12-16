@@ -23,7 +23,7 @@
 
     <main>
         <section class="container">
-            <form class="registration-form" action="/users/userEdit/<%= userToEdit.id %>?_method=PUT" method="POST">
+            <form class="registration-form" action="/users/userEdit/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                 <div class="form-data-section">
                 <label>Mis datos</label> 

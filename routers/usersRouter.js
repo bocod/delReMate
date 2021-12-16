@@ -1,14 +1,27 @@
 const express = require('express');
 const usersRouter = express.Router();
+const multer = require('multer');
 
 const usersController = require('../controllers/usersController');
 const registerValidator = require('../validations/registerValidator');
 
+const multerDiskStorage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        const folder = path.join(__dirname, '../public/img/usersImages');
+        cb(null, folder);
+    },
+    filename: (req, file, cb) => {
+        const imageName = `userIMG${Date.now()}${path.extname(file.originalname)}`;
+        cb(null, imageName);
+    }
+});
+
+const upload = multer({ storage: multerDiskStorage});
 
     //USERS ROUTES
 
 usersRouter.get('/register', usersController.registrationForm);
-usersRouter.post('/register', usersController.createUser);
+usersRouter.post('/register', upload.single('profilePic'), usersController.createUser);
 
 usersRouter.get('/login', usersController.login);
 usersRouter.post('/login', usersController.loginConfirmation);
