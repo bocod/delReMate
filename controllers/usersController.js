@@ -19,7 +19,7 @@ module.exports = {
         },
     
         createUser: (req, res) => {
-            
+            //Each field of form assigned as key to each property of the new object created
             let user = {
                 usertype: req.body.usertype,
                 name: req.body.name,
@@ -31,15 +31,14 @@ module.exports = {
                 profilePic: req.body.profilePic,
                 password: req.body.password
             };
-            
-            // add user to array of users... usersList.push(user)???
-            
             // let user = req.body ;
             console.log(user);
-            usersList.create(user);
-            console.log(usersList);
+            
+            // add user to array of users... and save changes
+            usersList.push(user);
 
-            // saveChangesUser();
+            saveChangesUser(user);
+
 
             res.redirect('/');
         },

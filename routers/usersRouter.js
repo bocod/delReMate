@@ -1,6 +1,7 @@
 const express = require('express');
 const usersRouter = express.Router();
 const multer = require('multer');
+const path = require('path');
 
 const usersController = require('../controllers/usersController');
 const registerValidator = require('../validations/registerValidator');
