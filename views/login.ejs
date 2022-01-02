@@ -21,7 +21,20 @@
 
     <main>
         <section class="container">
-            <form class="registration-form" action="/login" method="post">
+            <div class="form-errors">
+                <% if (typeof errors != 'undefined') { %>
+                    <p>Para poder continuar debes:</p>
+                    <ul>
+                        <% for (let i=0; i < errors.length; i++) { %>
+                            <li>
+                                <%= errors[i].msg %> 
+                            </li> 
+                        <% } %> 
+                    </ul> 
+                <% } %>
+            </div>    
+
+            <form class="registration-form" action="/users/login" method="post">
 
                 <div class="form-data-section">
                     <input type="text" name="username" id="username" class="input-field" placeholder="Nombre de usuario">
