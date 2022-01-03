@@ -7,6 +7,8 @@ const productRouter = require('./routers/productRouter');
 const logMiddleware = require('./middlewares/logMiddleware');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const rememberCookieMiddleware = require('./middlewares/rememberCookieMiddleware');
 
 app.listen(process.env.PORT || 3000, () => console.log('Server running'));
 
@@ -16,6 +18,8 @@ app.use(express.static(publicPath));
 
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+app.use(cookieParser());
+app.use(rememberCookieMiddleware);
 
 app.set('view engine', 'ejs');
 

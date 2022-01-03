@@ -68,7 +68,7 @@ module.exports = {
 
             //If do not exist any error...
             if (errors.isEmpty()){
-                let userLoggingIn = undefined;
+                let userLoggingIn;
                 //then we must consult wether the credentials (username & pass) are correct
                 for ( let i=0; i < usersList.length; i++ ) {
                     if (usersList[i].username == req.body.username) {
@@ -85,7 +85,14 @@ module.exports = {
                 }
 
                 req.session.userLoggedIn = userLoggingIn;
+                
+                //Check wether if the user has checked the remember session box and create cookie. maxAge in 'ms'
+                if(req.body.remember != undefined){
+                    res.cookie('remember', userLoggingIn.id, { maxAge: 60000 })
+                }
+                
                 //res.send(`usuario logueado: ${req.session.userLoggedIn.name} ${req.session.userLoggedIn.surname}`);
+
                 res.redirect('/');
 
             }else{
