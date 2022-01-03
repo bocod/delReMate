@@ -112,8 +112,8 @@ module.exports = {
     
         editConfirm: (req, res) => {
             
-            //Save in var the URL param
-            const idUser = req.params.idUser;
+            //Save in var the session id
+            const idUser = req.session.userLoggedIn.id;
             
             console.log(`----> idUser = ${idUser}`);
 
@@ -147,6 +147,13 @@ module.exports = {
         },
         
         deleteConfirm: (req, res) => {
+            res.redirect('/');
+        },
+
+        signout: (req, res) => {
+            
+            req.session.userLoggedIn = undefined;
+
             res.redirect('/');
         }
 };

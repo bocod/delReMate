@@ -34,9 +34,11 @@ usersRouter.post('/register', upload.single('profilePic'), usersController.creat
 usersRouter.get('/login', guestMiddleware, usersController.login);
 usersRouter.post('/login', loginValidator, usersController.loginConfirmation);
 
-usersRouter.get('/userEdit/:idUser', usersController.edit);
+usersRouter.get('/userEdit/:idUser', authMiddleware, usersController.edit);
 usersRouter.put('/userEdit/:idUser', usersController.editConfirm);
 usersRouter.delete('/delete', usersController.deleteConfirm);
+
+usersRouter.get('/signout', authMiddleware, usersController.signout);
 
 usersRouter.get('/check', (req, res) => {
     if (req.session.userLoggedIn != undefined) {
