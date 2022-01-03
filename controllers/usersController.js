@@ -49,8 +49,11 @@ module.exports = {
                 res.redirect('/');
 
             } else {
-                // if there exist any errors we turn back to form
-                return res.render('register', {errors: errors.errors});
+                // if there exist errors we turn back to form with the errors
+                res.render('register', { 
+                    errors: errors.array(),
+                    old: req.body
+                });
 
             };
         },
@@ -82,26 +85,25 @@ module.exports = {
                 }
 
                 req.session.userLoggedIn = userLoggingIn;
+                //res.send(`usuario logueado: ${req.session.userLoggedIn.name} ${req.session.userLoggedIn.surname}`);
                 res.redirect('/');
 
             }else{
                 return res.render('login', {errors: errors.errors});
             }
-            let user = {
-                username: req.body.username,
-                password: req.body.password
-            }
+
+            let loggedUser = req.session.userLoggedIn;
     
-            res.redirect('/');
+            res.redirect('/', {loggedUser: loggedUser});
         },
     
         edit: (req, res) => {
 
             //Bring to form all data registered in order to visualize it and eventually edit it
-            //save in var the URL param 
-            const idUser = req.params.idUser;
+            //save in a var the id of the user logged in
+            const idUser = req.session.userLoggedIn.id;
 
-            //save in var the result of searching the user with same id that the URL param 
+            //save in var the result of searching the user with same id that the session id 
             const userToEdit = usersList.find( user => user.id == idUser );
 
             //render the form with all data recovered

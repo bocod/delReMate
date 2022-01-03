@@ -3,8 +3,12 @@
     <section class="upper-header padding-1rem">
         <h1><a href="/"><img src="/images/mate-logo.jpeg" alt="delReMate logo"></a></h1>
         <section class="upper-header-right">
-            <a href="/users/register">Registrarme</a> |
-            <a href="/users/login">Ingresar</a>
+            <% if (typeof loggedUser == 'undefined') { %>
+                <a href="/users/register">Registrarme</a> |
+                <a href="/users/login">Ingresar</a>
+            <% } else if (typeof loggedUser != 'undefined') { %> 
+                <a href="#"> <%= loggedUser.username  %> </a>
+            <% } %> 
             <a href="/users/userEdit/1709519451"><i class="icon far fa-user"></i></a>
             <a href="/products/productCart"><i class="icon fas fa-shopping-cart"></i></a>
         </section>

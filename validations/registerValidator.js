@@ -1,10 +1,12 @@
 const {body} = require('express-validator');
 
 const registerValidator = [
-    body('usertype').notEmpty().withMessage('Debes seleccionar si eres individuo o empresa'),
-    body('name').isLength({min: 3}).withMessage('Debes escribir tu nombre completo'),
-    body('surname').isLength({min: 2}).withMessage('Debes escribir tu apellido completo'),
-    body('email').isEmail().withMessage('Debes ingresar un email válido')
+//    body('name').notEmpty().withMessage('Debes escribir tu nombre'),
+//    body('surname').notEmpty().withMessage('Debes escribir tu apellido'),
+//    body('email').isEmail().withMessage('Debes ingresar un email válido')
+    body('username').notEmpty().withMessage('Completar tu nombre de usuario'),
+    body('password').isLength({ min: 8 }).withMessage('Ingresar una contraseña válida')
+
 ];
 
 module.exports = registerValidator;

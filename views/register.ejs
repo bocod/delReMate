@@ -23,20 +23,21 @@
 
     <main>
         <section class="container">
+            
+            <div class="form-errors">
+                <% if (typeof errors != 'undefined') { %>
+                    <p>Para continuar:</p>
+                    <ul>
+                        <% for (let i=0; i < errors.length; i++) { %>
+                            <li>
+                                <%= errors[i].msg %> 
+                            </li> 
+                        <% } %> 
+                    </ul> 
+                <% } %>
+            </div>  
+
             <form class="registration-form" action="/users/register" method="POST" enctype="multipart/form-data">
-                
-                <div class="form-errors">
-                    <% if (typeof errors != 'undefined') { %>
-                        <p>Para poder continuar debes:</p>
-                        <ul>
-                            <% for (let i=0; i < errors.length; i++) { %>
-                                <li>
-                                    <%= errors[i].msg %> 
-                                </li> 
-                            <% } %> 
-                        </ul> 
-                    <% } %>
-                </div>    
 
                 <div class="form-data-section">
                 <label>Soy...</label> 

@@ -4,6 +4,9 @@ const usersRouter = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 const usersController = require('../controllers/usersController');
 const loginValidator = require('../validations/loginValidator');
 const registerValidator = require('../validations/registerValidator');
@@ -25,14 +28,22 @@ const upload = multer({ storage: multerDiskStorage});
 
     //USERS ROUTES
 
-usersRouter.get('/register', usersController.registrationForm);
-usersRouter.post('/register', registerValidator, upload.single('profilePic'), usersController.createUser);
+usersRouter.get('/register', guestMiddleware, usersController.registrationForm);
+usersRouter.post('/register', upload.single('profilePic'), usersController.createUser);
 
-usersRouter.get('/login', usersController.login);
+usersRouter.get('/login', guestMiddleware, usersController.login);
 usersRouter.post('/login', loginValidator, usersController.loginConfirmation);
 
 usersRouter.get('/userEdit/:idUser', usersController.edit);
 usersRouter.put('/userEdit/:idUser', usersController.editConfirm);
 usersRouter.delete('/delete', usersController.deleteConfirm);
+
+usersRouter.get('/check', (req, res) => {
+    if (req.session.userLoggedIn != undefined) {
+        res.send(`User loggedin : ${req.session.userLoggedIn.name}`);
+    } else {
+        res.send(`User loggedin : Invitado`);
+    }
+});
 
 module.exports = usersRouter;
