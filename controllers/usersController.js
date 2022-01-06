@@ -29,15 +29,8 @@ module.exports = {
                 // let user = req.body ;
                 let user = {
                     id: Date.now(),
-                    usertype: req.body.usertype,
-                    name: req.body.name,
-                    surname: req.body.surname,
-                    username: req.body.username,
-                    birthdate: req.body.birthdate,
-                    email: req.body.email,
-                    country: req.body.country,
-                    profilePic: req.body.profilePic,
-                    password: req.body.password,
+                    profilePic: req.file.filename,
+                    ...req.body,
                 };
                 
                 // add user to array of users... and save changes
@@ -86,7 +79,10 @@ module.exports = {
 
                 req.session.userLoggedIn = userLoggingIn;
                 
-                //Check wether if the user has checked the remember session box and create cookie. maxAge in 'ms'
+                //Check wether if the user has checked the remember session box and create cookie. 
+                //The first param of the cookie() is the name we want to give to that cookie
+                //The second param is what we want to store in that cookie 
+                //The third param is the time that cookie will last in 'ms' miliseconds
                 if(req.body.remember != undefined){
                     res.cookie('remember', userLoggingIn.id, { maxAge: 60000 })
                 }
@@ -101,7 +97,7 @@ module.exports = {
 
             let loggedUser = req.session.userLoggedIn;
     
-            res.redirect('/', {loggedUser: loggedUser});
+            res.redirect('/');
         },
     
         edit: (req, res) => {
