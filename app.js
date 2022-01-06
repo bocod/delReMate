@@ -25,7 +25,11 @@ app.set('view engine', 'ejs');
 
 app.use(methodOverride('_method'));
 
-app.use( session({ secret: 'DelReMate session process!!!' }) );
+app.use( session({ 
+    secret: 'DelReMate session process!!!',
+    resave: false,
+    saveUninitialized: false,
+}) );
 
 app.use('/', router);
 app.use('/users', usersRouter);
