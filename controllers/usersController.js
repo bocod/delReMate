@@ -1,6 +1,7 @@
 const { body, validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
+const User = require('.../models/User');
 
 const usersDataPath = path.join(__dirname, '../database/usersData.json');
 const usersDataText = fs.readFileSync(usersDataPath, 'utf-8');
@@ -24,13 +25,33 @@ module.exports = {
             //Create a var to store errors. All data sent by user arrive to 'req', that's why we want the result of validating that request
             let errors = validationResult(req);
 
-            if (errors.isEmpty()){
+            // if there exist errors we turn back to form with the errors
+            if ( !errors.isEmpty() ) {
+                return res.render('register', { 
+                    errors: errors.array(),
+                    old: req.body
+                });
+            };
+
+            // Verifying wether the user attempting to register is already in DB
+            let userRegistered = User.findByField( 'email', req.body.email );
+            if ( userRegistered ) {
+                return res.render( 'register', {
+                    errors : {
+                        email : {
+                            msg : 'Usuario ya registrado'
+                        },
+                        oldData : req.body
+                    };
+                });
+            };
+
+            if ( errors.isEmpty() ){
                 //Each field of form assigned as key to each property of the new object created
                 // let user = req.body ;
                 let user = {
-                    id: Date.now(),
-                    profilePic: req.file.filename,
                     ...req.body,
+                    profilePic: req.file.filename,
                 };
                 
                 // add user to array of users... and save changes
@@ -40,13 +61,6 @@ module.exports = {
 
 
                 res.redirect('/');
-
-            } else {
-                // if there exist errors we turn back to form with the errors
-                res.render('register', { 
-                    errors: errors.array(),
-                    old: req.body
-                });
 
             };
         },

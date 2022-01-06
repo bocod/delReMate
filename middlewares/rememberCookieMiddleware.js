@@ -8,12 +8,14 @@ const usersList = JSON.parse(usersDataText);
 
 const rememberCookieMiddleware = (req, res, next) => {
     
-    next();
+    
     
     //Checking if we already have cookies running but no user session open
-    if (req.cookies.remember != undefined && req.session == undefined) {    
+    if ((req.cookies.remember !== undefined) && (req.session == undefined)) {    
 
         let userLoggingIn;
+        console.log(userLoggingIn);
+
         //We search the id storaged in the cookie in the array of users and initialize session again
         for ( let i=0; i < usersList.length; i++ ) {
             if (usersList[i].id == req.cookies.remember) {
@@ -22,8 +24,12 @@ const rememberCookieMiddleware = (req, res, next) => {
             };
         };
 
+        console.log(userLoggingIn);
         req.session.userLoggedIn = userLoggingIn;
+        console.log(req.session.userLoggedIn);
     }
+    
+    next();
     
 };
 
