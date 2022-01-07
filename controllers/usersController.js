@@ -51,8 +51,9 @@ module.exports = {
             if ( errors.isEmpty() ){
                 //Each field of form assigned as key to each property of the new object created
                 // let user = req.body ;
+                let lastUser = usersList[usersList.length - 1];
                 let user = {
-                    id : usersList.length+1,
+                    id : lastUser.id+1,
                     ...req.body,
                     password : bcryptjs.hashSync( req.body.password, 12 ),
                     password_confirmation : bcryptjs.hashSync( req.body.password_confirmation, 12 ),
@@ -68,15 +69,6 @@ module.exports = {
                 res.redirect('/users/login');
 
             };
-        },
-
-        generateID: function(){
-            allUsers = usersList;
-            let lastUser = allUsers.pop();
-            if (lastUser) {
-                return lastUser.id + 1;
-            }
-            return 1;
         },
     
         login: (req, res) => {
