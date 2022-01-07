@@ -1,4 +1,5 @@
-// This file will contain a model of a literal object in wich there will be the methods that will handle
+// This file will contain a model of a literal object representating a user
+// in this file there will be the methods that will handle
 // the CRUD actions
 
 const fs = require('fs');
@@ -6,13 +7,13 @@ const fs = require('fs');
 const User = {
     
     // At first we locate the file that contains de users data...
-    filename : '../database/usersData.json',
+    filename : './database/usersData.json',
     
     // Then the json file is converted to array in order to manipulate it,
     // and returned once it is parsed from string to array...
     // and we read it using the method readFileSync from fs 
     getData : () => {
-        return JSON.parse( fs.readFileSync(this.filename, 'utf-8'))
+        return JSON.parse(fs.readFileSync(this.filename, 'utf-8'));
     },
 
     // A 'findAll' method is created in order to easily access to all users array
@@ -46,7 +47,7 @@ const User = {
     create : (userData) => {
         let allUsers = this.findAll();
         let newUser = {
-            id = this.generateID(),
+            id : this.generateID(),
             ...userData
         };
         allUsers.push(newUser);
@@ -78,4 +79,6 @@ const User = {
         fs.writeFileSync(this.filename, JSON.stringify( finalUsers, null, ' ' ));
         return true;
     }
-}
+};
+
+module.exports = User;

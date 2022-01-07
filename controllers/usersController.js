@@ -1,11 +1,13 @@
 const { body, validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
-const User = require('.../models/User');
+const User = require('../models/User');
+const bcryptjs = require('bcryptjs');
 
 const usersDataPath = path.join(__dirname, '../database/usersData.json');
 const usersDataText = fs.readFileSync(usersDataPath, 'utf-8');
 const usersList = JSON.parse(usersDataText);
+
 
 function saveChangesUser(){
     const usersDataStringified = JSON.stringify(usersList);
@@ -34,24 +36,26 @@ module.exports = {
             };
 
             // Verifying wether the user attempting to register is already in DB
-            let userRegistered = User.findByField( 'email', req.body.email );
-            if ( userRegistered ) {
-                return res.render( 'register', {
-                    errors : {
-                        email : {
-                            msg : 'Usuario ya registrado'
-                        },
-                        oldData : req.body
-                    };
-                });
-            };
+            // let userRegistered = User.findByField( 'email', req.body.email );
+            // if ( userRegistered ) {
+            //     return res.render( 'register', {
+            //         errors : {
+            //             email : {
+            //                 msg : 'Usuario ya registrado'
+            //             },
+            //             oldData : req.body
+            //         }
+            //     });
+            // };
 
             if ( errors.isEmpty() ){
                 //Each field of form assigned as key to each property of the new object created
                 // let user = req.body ;
                 let user = {
                     ...req.body,
-                    profilePic: req.file.filename,
+                    password : bcryptjs.hashSync( req.body.password, 12 ),
+                    password_confirmation : bcryptjs.hashSync( req.body.password_confirmation, 12 ),
+                    profilePic : req.file.filename,
                 };
                 
                 // add user to array of users... and save changes
@@ -60,7 +64,7 @@ module.exports = {
                 saveChangesUser(user);
 
 
-                res.redirect('/');
+                res.redirect('/users/login');
 
             };
         },
@@ -79,7 +83,7 @@ module.exports = {
                 //then we must consult wether the credentials (username & pass) are correct
                 for ( let i=0; i < usersList.length; i++ ) {
                     if (usersList[i].username == req.body.username) {
-                        if (usersList[i].password == req.body.password) {
+                        if (bcryptjs.compareSync( req.body.password, usersList[i].password )) {
                             userLoggingIn = usersList[i];
                             break;
                         };
