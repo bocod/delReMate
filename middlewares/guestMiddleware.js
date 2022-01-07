@@ -8,7 +8,7 @@ function guestMiddleware (req, res, next) {
 
     } else {
 
-        res.send(`Ya se encuentra logueado el usuario ${req.session.userLoggedIn.username}`);
+        res.render('errors/error404');
 
     }
 };

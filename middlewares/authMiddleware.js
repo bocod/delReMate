@@ -8,7 +8,7 @@ function authMiddleware (req, res, next) {
     
     } else {
 
-        res.send(`Contenido exclusivo para usuarios registrados`);
+        res.redirect('/users/login');
         
     }
 };

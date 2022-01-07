@@ -23,7 +23,7 @@
         <section class="container">
             <div class="form-errors">
                 <% if (typeof errors != 'undefined') { %>
-                    <p>Para poder continuar debes:</p>
+                    
                     <ul>
                         <% for (let i=0; i < errors.length; i++) { %>
                             <li>
@@ -47,7 +47,7 @@
 
                 <div class="tycPp">
                     <label>
-                        <input type="checkbox" class="tyc" name="remember"> Mantener sesión abierta
+                        <input type="checkbox" class="tyc" name="remember" disabled> Mantener sesión abierta
                     </label>
                 </div>
 

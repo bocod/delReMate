@@ -31,7 +31,7 @@ module.exports = {
             if ( !errors.isEmpty() ) {
                 return res.render('register', { 
                     errors: errors.array(),
-                    old: req.body
+                    oldData: req.body
                 });
             };
 
@@ -52,6 +52,7 @@ module.exports = {
                 //Each field of form assigned as key to each property of the new object created
                 // let user = req.body ;
                 let user = {
+                    id : usersList.length+1,
                     ...req.body,
                     password : bcryptjs.hashSync( req.body.password, 12 ),
                     password_confirmation : bcryptjs.hashSync( req.body.password_confirmation, 12 ),
@@ -67,6 +68,15 @@ module.exports = {
                 res.redirect('/users/login');
 
             };
+        },
+
+        generateID: function(){
+            allUsers = usersList;
+            let lastUser = allUsers.pop();
+            if (lastUser) {
+                return lastUser.id + 1;
+            }
+            return 1;
         },
     
         login: (req, res) => {
@@ -168,7 +178,9 @@ module.exports = {
         },
         
         deleteConfirm: (req, res) => {
-            res.redirect('/');
+
+            res.redirect('/');            
+
         },
 
         signout: (req, res) => {

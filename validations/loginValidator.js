@@ -1,8 +1,8 @@
-const {body} = require('express-validator');
+const { body } = require('express-validator');
 
 const loginValidator = [
-    body('username').notEmpty().withMessage('Completar tu nombre de usuario'),
-    body('password').isLength({ min: 8 }).withMessage('Credenciales inválidas')
+    body('username').notEmpty().withMessage(' '),
+    body('password').isLength({ min: 4 }).withMessage('¡Credenciales inválidas!')
 ];
 
 module.exports = loginValidator;

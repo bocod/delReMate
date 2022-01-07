@@ -48,29 +48,29 @@
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" >
+                    <input type="text" name="name" id="name" class="input-field" placeholder="Nombre" value="<%= locals.oldData ? oldData.name : null %>" >
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="surname" id="surname" class="input-field" placeholder="Apellido" >
+                    <input type="text" name="surname" id="surname" class="input-field" placeholder="Apellido" value="<%= locals.oldData ? oldData.surname : null %>" >
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="username" id="username" class="input-field" placeholder="Nombre de usuario" >
+                    <input type="text" name="username" id="username" class="input-field" placeholder="Nombre de usuario" value="<%= locals.oldData ? oldData.username : null %>" >
                 </div>
 
                 <div class="form-data-section">
                     <label for="birthdate">Fecha de nacimiento</label> 
-                    <input type="date" name="birthdate" id="birthdate" class="input-field" >
+                    <input type="date" name="birthdate" id="birthdate" class="input-field" value="<%= locals.oldData ? oldData.birthdate : null %>" >
                 </div>
 
                 <div class="form-data-section">
-                    <input type="text" name="email" id="address" class="input-field" placeholder="e-mail" >
+                    <input type="text" name="email" id="address" class="input-field" placeholder="email" value="<%= locals.oldData ? oldData.email : null %>" >
                 </div>
                 
                 <div class="form-data-section">
                     <label>País de residencia</label> 
-                    <select class="country-selector" name="country">
+                    <select class="country-selector" name="country" value="<%= locals.oldData ? oldData.country : null %>">
                         <option value="AF">Afganistán</option>
                         <option value="AL">Albania</option>
                         <option value="DE">Alemania</option>

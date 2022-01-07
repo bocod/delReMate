@@ -29,7 +29,7 @@ const upload = multer({ storage: multerDiskStorage});
     //USERS ROUTES
 
 usersRouter.get('/register', guestMiddleware, usersController.registrationForm);
-usersRouter.post('/register', upload.single('profilePic'), usersController.createUser);
+usersRouter.post('/register', registerValidator, upload.single('profilePic'), usersController.createUser);
 
 usersRouter.get('/login', guestMiddleware, usersController.login);
 usersRouter.post('/login', loginValidator, usersController.loginConfirmation);
