@@ -103,23 +103,26 @@ module.exports = {
                 //The first param of the cookie() is the name we want to give to that cookie
                 //The second param is what we want to store in that cookie 
                 //The third param is the time that cookie will last in 'ms' miliseconds
-                if(req.body.remember != undefined){
-                    res.cookie('remember', userLoggingIn.id, { maxAge: 60000 })
+
+                if(req.body.remember == 'on'){
+                    res.cookie('username', userLoggingIn.username, { maxAge: 60000 })
                 }
                 
                 //res.send(`usuario logueado: ${req.session.userLoggedIn.name} ${req.session.userLoggedIn.surname}`);
 
-                res.redirect('/');
+                let loggedUser = req.session.userLoggedIn;
+                
+                return res.redirect('/');
 
             }else{
                 return res.render('login', {errors: errors.errors});
-            }
-
-            let loggedUser = req.session.userLoggedIn;
-    
-            res.redirect('/');
+            };
         },
-    
+        
+        profile: (req, res) => {
+            res.render('profile');
+        },
+
         edit: (req, res) => {
 
             //Bring to form all data registered in order to visualize it and eventually edit it
@@ -138,16 +141,16 @@ module.exports = {
             //Save in var the session id
             const idUser = req.session.userLoggedIn.id;
             
-            console.log(`----> idUser = ${idUser}`);
+            //console.log(`----> idUser = ${idUser}`);
 
             //Save in var the result of searching de position of that id in the array of users
             const indexUser = usersList.findIndex( user => user.id == idUser );
             
-            console.log(`----> put index idUser = ${indexUser}`);
+            //console.log(`----> put index idUser = ${indexUser}`);
             
             // Save in var the updated fields of form
             let updatedUser = {
-                id: req.params.idUser,
+                id: idUser,
                 usertype: req.body.usertype,
                 name: req.body.name,
                 surname: req.body.surname,
@@ -155,11 +158,11 @@ module.exports = {
                 birthdate: req.body.birthdate,
                 email: req.body.email,
                 country: req.body.country,
-                profilePic: req.body.profilePic,
-                password: req.body.password,
+                profilePic: req.file.filename,
+                password: bcryptjs.hashSync( req.body.password, 12 ),
             };
 
-            console.log(`----> updateUser ${updatedUser}`);
+            //console.log(`----> updateUser ${updatedUser}`);
 
             //Assign to the position of the array the results of the user data modified
             usersList[indexUser] = updatedUser;
@@ -170,9 +173,17 @@ module.exports = {
         },
         
         deleteConfirm: (req, res) => {
-
-            res.redirect('/');            
-
+            // Buscar el indice del elemento user.id en el array de users
+            // guardar el indice en una var
+            // splice el array en esa posicion, 1 elemento
+            //array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+            // array.splice(indexUserToDelete, 1);
+            
+            let userToDelete = usersList.indexOf(req.session.userLoggedIn.id === user.id);
+            usersList.splice(userToDelete,1);
+            saveChangesUser();
+            return res.redirect('/');        
+            
         },
 
         signout: (req, res) => {

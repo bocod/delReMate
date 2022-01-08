@@ -11,25 +11,25 @@ const rememberCookieMiddleware = (req, res, next) => {
     
     
     //Checking if we already have cookies running but no user session open
-    if ((req.cookies.remember !== undefined) && (req.session == undefined)) {    
+    if ((req.cookies.remember != undefined) && (req.session === undefined)) {    
 
-        let userLoggingIn;
-        console.log(userLoggingIn);
+        //et userLoggingIn;
+        
+        //We search the username, that is storaged in the cookie, in the array of users and initialize session again
 
-        //We search the id storaged in the cookie in the array of users and initialize session again
-        for ( let i=0; i < usersList.length; i++ ) {
-            if (usersList[i].id == req.cookies.remember) {
-                userLoggingIn = usersList[i];
-                break;
-            };
-        };
+        const findUser = user => user.username == req.cookies.remember;
 
-        console.log(userLoggingIn);
-        req.session.userLoggedIn = userLoggingIn;
-        console.log(req.session.userLoggedIn);
-    }
+        let userFound = usersList.findIndex(findUser);
+
+        req.session.userLoggedIn = usersList[userFound];
+
+        return next();
     
-    next();
+    } else {
+
+        return next();
+
+    }
     
 };
 

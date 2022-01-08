@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DelReMate - Producto</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/header-n-footer.css">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/medias.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <%- include('./partials/header') %> 
+
+    <main>
+        <div class="container">
+
+            <h2>Mis datos</h2>
+
+            <section class="upper-section">
+
+                <div class="form-data-section">
+                    <label for="profilePic">
+                        <img src="/images/dummie.jpg" alt="profile picture" name="profilePic">
+                    </label>
+                </div>
+
+                <div class="section-header">
+                    <h3>Datos de acceso</h3>
+                    <h5>Modificar datos de acceso</h5>
+                </div>
+
+                <div class="data-section">
+                    
+                    <div class="form-data-section">
+                        <label>Usuario
+                            <input class="input-field" type="text" name="username" placeholder="username">
+                        </label>
+                    </div>
+                    <div class="form-data-section">
+                        <label>Contraseña
+                            <input class="input-field" type="password" name="password" placeholder="password">
+                        </label>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="lower-section">
+
+                <div class="section-header">
+                    <h3>Datos personales</h3>
+                    <h5>Modificar datos personales</h5>
+                </div>
+
+                <div class="data-section">
+                    <div class="form-data-section">
+                        <label for="name">
+                            <input class="input-field" type="text" name="name" placeholder="name">
+                        </label>
+                    </div>
+
+                    <div class="form-data-section">
+                        <label for="surname">
+                            <input class="input-field" type="text" name="surname" placeholder="surname">
+                        </label>
+                    </div>
+
+                    <div class="form-data-section">
+                        <label for="birthdate">
+                            <input class="input-field" type="date" name="birthdate" placeholder="birthdate">
+                        </label>
+                    </div>
+
+                    <div class="form-data-section">    
+                        <label for="email">
+                            <input class="input-field" type="email" name="email" placeholder="email">
+                        </label>
+                    </div>    
+
+                    <div class="form-data-section">
+                        <label for="country">
+                            <input class="input-field" type="country" name="country" placeholder="country">
+                        </label>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        
+    </main>
+
+    <%- include('./partials/footer') %> 
+</body>
+</html>

@@ -1,4 +1,4 @@
-// Verify if user is logged in
+// Verify if user is logged in can go on, else you must login first!
 
 function authMiddleware (req, res, next) {
 

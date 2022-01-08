@@ -317,10 +317,14 @@
                 </div>
 
                 <button type="submit" class="form-button blue-button emphasize-button">Confirmar cambios</button>
+            </form>
                 
-                <button type="submit" class="form-button red-button emphasize-red-button" formaction="/users/delete/<%= userToEdit.id %>?_method=DELETE">Darme de baja</button>
+            <form class="registration-form" action="/users/delete/<%= userToEdit.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+
+                <button type="submit" class="form-button red-button emphasize-red-button">Darme de baja</button>
                 
             </form>
+
         </section>
     </main>
 
