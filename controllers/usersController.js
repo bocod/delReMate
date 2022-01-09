@@ -51,15 +51,24 @@ module.exports = {
             if ( errors.isEmpty() ){
                 //Each field of form assigned as key to each property of the new object created
                 // let user = req.body ;
+                let user;
                 let lastUser = usersList[usersList.length - 1];
-                let user = {
-                    id : lastUser.id+1,
-                    ...req.body,
-                    password : bcryptjs.hashSync( req.body.password, 12 ),
-                    password_confirmation : bcryptjs.hashSync( req.body.password_confirmation, 12 ),
-                    profilePic : req.file.filename,
-                };
                 
+                if (lastUser == undefined) {
+                    user = {
+                        id : 1,
+                        ...req.body,
+                        password : bcryptjs.hashSync( req.body.password, 12 ),
+                        profilePic : req.file.filename,
+                    };
+                } else {
+                    user = {
+                        id : lastUser.id+1,
+                        ...req.body,
+                        password : bcryptjs.hashSync( req.body.password, 12 ),
+                        profilePic : req.file.filename,
+                    };
+                }
                 // add user to array of users... and save changes
                 usersList.push(user);
 
@@ -73,6 +82,7 @@ module.exports = {
     
         login: (req, res) => {
             res.render('login')
+            console.log(req.session);
         },
     
         loginConfirmation: (req, res) => {
@@ -96,23 +106,23 @@ module.exports = {
                         {msg: 'Credenciales inválidas'}
                     ]});
                 }
-
+                delete userLoggingIn.password;
                 req.session.userLoggedIn = userLoggingIn;
-                
+
                 //Check wether if the user has checked the remember session box and create cookie. 
                 //The first param of the cookie() is the name we want to give to that cookie
                 //The second param is what we want to store in that cookie 
                 //The third param is the time that cookie will last in 'ms' miliseconds
-
-                if(req.body.remember == 'on'){
-                    res.cookie('username', userLoggingIn.username, { maxAge: 60000 })
+                
+                if(req.body.remember != undefined){
+                    res.cookie('username', userLoggingIn.username, { maxAge: 600000 })
                 }
                 
                 //res.send(`usuario logueado: ${req.session.userLoggedIn.name} ${req.session.userLoggedIn.surname}`);
 
-                let loggedUser = req.session.userLoggedIn;
+                let user = req.session.userLoggedIn;
                 
-                return res.redirect('/');
+                return res.redirect(`/users/profile/${user.id}`);
 
             }else{
                 return res.render('login', {errors: errors.errors});
@@ -120,7 +130,11 @@ module.exports = {
         },
         
         profile: (req, res) => {
-            res.render('profile');
+            //Bring data from DB searching by the id provided by session, then we sent it to the view 
+            const idUser = req.session.userLoggedIn.id;
+            const userData = usersList.find( user => user.id == idUser );
+
+            res.render('profile', { userData: userData });
         },
 
         edit: (req, res) => {
@@ -137,7 +151,9 @@ module.exports = {
         },
     
         editConfirm: (req, res) => {
-            
+
+            //  !!!     Missing validating data before making changes
+
             //Save in var the session id
             const idUser = req.session.userLoggedIn.id;
             
@@ -170,6 +186,7 @@ module.exports = {
             saveChangesUser();
     
             res.redirect('/');
+        
         },
         
         deleteConfirm: (req, res) => {

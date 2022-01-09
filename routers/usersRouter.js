@@ -37,7 +37,7 @@ usersRouter.post('/login', loginValidator, usersController.loginConfirmation);
 usersRouter.get('/profile/:idUser?', authMiddleware, usersController.profile);
 
 usersRouter.get('/userEdit/:idUser', authMiddleware, usersController.edit);
-usersRouter.put('/userEdit/:idUser', usersController.editConfirm);
+usersRouter.put('/userEdit/:idUser',  upload.single('profilePic'),usersController.editConfirm);
 usersRouter.delete('/delete', usersController.deleteConfirm);
 
 usersRouter.get('/signout', authMiddleware, usersController.signout);

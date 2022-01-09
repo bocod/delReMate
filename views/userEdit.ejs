@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/header-n-footer.css">
     <link rel="stylesheet" href="/css/form.css">
     <link rel="stylesheet" href="/css/buttons.css">
+    <link rel="stylesheet" href="/css/image-section.css">
     <link rel="stylesheet" href="/css/medias.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +24,7 @@
 
     <main>
         <section class="container">
+
             <form class="registration-form" action="/users/userEdit/<%= userToEdit.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
 
                 <div class="form-data-section">
@@ -309,8 +311,15 @@
 
                 <div class="form-data-section">
                     <label for="pic">Foto de usuario</label> 
-                    <input type="file" name="profilePic" accept="image/*">
+                    <div class="image-section">
+                        <input type="file" name="profilePic" accept="image/*">
+                        <img src="/img/usersImages/<%= userToEdit.profilePic %>" alt="Foto de perfil">
+                    </div>
                 </div>
+
+                <!-- <div class="form-data-section">
+                    <input type="password" name="newpassword" class="input-field" placeholder="Nueva contraseña" >
+                </div> -->
 
                 <div class="form-data-section">
                     <input type="password" name="password" class="input-field" placeholder="Contraseña" >

@@ -1,11 +1,8 @@
 .container{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: space-between;
+    margin: 0, auto;
 }
 
-.lower-section{}
+
 
 .section-header{
     display: flex;
@@ -14,6 +11,16 @@
     justify-content: space-between;
 }
 
-.profilePic{}
+.form-data-section{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
 
-.data-section{}
+.form-data-section label {
+    width: 30%;
+}
+
+.registration-form button {
+    align-self: flex-start;
+}

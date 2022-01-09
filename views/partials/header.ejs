@@ -4,11 +4,20 @@
         <h1><a href="/"><img src="/images/mate-logo.jpeg" alt="delReMate logo"></a></h1>
         <section class="upper-header-right">
             
-            <a href="/users/register">Registrarme</a> |
-            <a href="/users/login">Ingresar</a>
-            <a href="/users/userEdit/1709519451"><i class="icon far fa-user"></i></a>
-            <a href="/products/productCart"><i class="icon fas fa-shopping-cart"></i></a>
-            <a href="/users/signout"><i class="fas fa-sign-out-alt"></i></a>
+            <!-- signo de apertura de ejs quitado para comentario '<' 
+                % if (locals.isLogged !== undefined) { %> 
+                <p>%= idUser.name %> | </p>
+                <a href="/users/profile/% (locals.idUser == undefined) ? "" : idUser.id %>"><i class="icon far fa-user"></i></a>
+                <a href="/products/productCart"><i class="icon fas fa-shopping-cart"></i></a>
+                <a href="/users/signout"><i class="fas fa-sign-out-alt"></i></a>
+            % } else { %> -->
+                <a href="/users/register">Registrarme</a> |
+                <a href="/users/login">Ingresar</a>
+                <a href="/users/profile/<% (locals.idUser == undefined) ? "" : idUser.id %>"><i class="icon far fa-user"></i></a>
+                <a href="/products/productCart"><i class="icon fas fa-shopping-cart"></i></a>
+                <a href="/users/signout"><i class="fas fa-sign-out-alt"></i></a>
+            <!-- % } %> -->
+
         </section>
     </section>
     <section class="lower-header fc-dblue">

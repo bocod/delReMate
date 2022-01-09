@@ -2,14 +2,25 @@
   {
     "id": 1,
     "usertype": "human",
-    "name": "guest",
-    "surname": "guest",
-    "username": "guest",
-    "birthdate": "2001-01-01",
-    "email": "guest@guest.com",
+    "name": "Mate",
+    "surname": "Dummie",
+    "username": "mate",
+    "birthdate": "0001-01-01",
+    "email": "mate@dummie.com",
     "country": "ES",
-    "password": "$2a$12$Xz2dDwjPDeXP5v0vaC96V.lcRSX9MhN3EBAWNgoALucvVAZ3oikzq",
-    "password_confirmation": "$2a$12$.PIsXjWHIvtJXRzRXj8Mc.G9w6ne8GJxYMY3d837PCBpd6S6oi3c2",
-    "profilePic": "userIMG1641527325720.jpg"
+    "password": "$2a$12$owregV4eEkmenbA6x759Q.1HENT99q2x6ofiQFiOMsYyRlX5loKsG",
+    "profilePic": "userIMG1641672349794.jpg"
+  },
+  {
+    "id": 2,
+    "usertype": "business",
+    "name": "Mate",
+    "surname": "Seller",
+    "username": "seller",
+    "birthdate": "0001-01-01",
+    "email": "mate@seller.io",
+    "country": "AR",
+    "password": "$2a$12$twPcHRyHHGpdc87f128fX.n.dEpju2AeNWGXcmRIJR9xyE/wzsD0O",
+    "profilePic": "userIMG1641672455700.jpg"
   }
 ]
