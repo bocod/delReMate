@@ -82,7 +82,7 @@ module.exports = {
     
         login: (req, res) => {
             res.render('login')
-            console.log(req.session);
+            
         },
     
         loginConfirmation: (req, res) => {
@@ -196,10 +196,11 @@ module.exports = {
             //array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
             // array.splice(indexUserToDelete, 1);
             
-            let userToDelete = usersList.indexOf(req.session.userLoggedIn.id === user.id);
+            let userToDelete = usersList.findIndex(user => req.session.userLoggedIn.id === user.id);
             usersList.splice(userToDelete,1);
             saveChangesUser();
-            return res.redirect('/');        
+            req.session.destroy();
+            res.redirect('/');        
             
         },
 
