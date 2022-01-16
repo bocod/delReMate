@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "delReMate marketplace project",
   "main": "app.js",
-  "type": "commonjs",
   "scripts": {
     "start": "node app.js",
     "test": "nodemon -e js node app.js"
