@@ -4,10 +4,13 @@ const path = require('path');
 const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 
+const fetch = require('node-fetch');
+
 const usersDataPath = path.join(__dirname, '../database/usersData.json');
 const usersDataText = fs.readFileSync(usersDataPath, 'utf-8');
 const usersList = JSON.parse(usersDataText);
 
+const countriesController = require('./countriesController');
 
 function saveChangesUser(){
     const usersDataStringified = JSON.stringify(usersList);
@@ -18,8 +21,11 @@ module.exports = {
 
         //USER CONTROLLER SECTION
 
-        registrationForm:(req, res) => {
-            res.render('register')
+        registrationForm: async(req, res) => {
+
+            let countries = await fetch('https://restcountries.com/v2/all').then((result) => result.json());
+            
+            res.render('register', { countries } )
         },
     
         createUser: (req, res) => {
@@ -137,7 +143,9 @@ module.exports = {
             res.render('profile', { userData: userData });
         },
 
-        edit: (req, res) => {
+        edit: async(req, res) => {
+
+            let countries = await fetch('https://restcountries.com/v2/all').then((result) => result.json());
 
             //Bring to form all data registered in order to visualize it and eventually edit it
             //save in a var the id of the user logged in
@@ -147,7 +155,7 @@ module.exports = {
             const userToEdit = usersList.find( user => user.id == idUser );
 
             //render the form with all data recovered
-            res.render('userEdit', {userToEdit: userToEdit});
+            res.render('userEdit', {userToEdit: userToEdit, countries});
         },
     
         editConfirm: (req, res) => {
