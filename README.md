@@ -1,6 +1,6 @@
 # grupo-01
 
-[Link al proyecto - DelReMate] (https://delremate.herokuapp.com)
+[Link al proyecto - DelReMate](https://delremate.herokuapp.com)
 
 ## Temática del Market Place
 
